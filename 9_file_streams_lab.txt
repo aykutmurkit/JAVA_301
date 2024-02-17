@@ -1,0 +1,58 @@
+
+**
+
+dosyaya byte olarak okuyacağız karakterleri büyük harf yapıp yeni bir dosyaya yazacağız.
+
+**
+
+*
+*
+*
+
+File inputFile = new File("C:\\Users\\aykut\\Desktop\\lorem.txt");
+File outputFile = new File("C:\\Users\\aykut\\Desktop\\lore_output.txt");
+
+if (inputFile.exists()){
+    
+    FileInputStream fileInputStream = null;
+    FileOutputStream fileOutputStream = null;
+
+    try {
+        fileInputStream = new FileInputStream(inputFile);
+        fileOutputStream = new FileOutputStream(outputFile);
+
+        int c = 0;
+        while((c = fileInputStream.read()) != -1){
+            char ch = (char)c;
+            fileInputStream.write(character.toUpperCase(ch));
+        }
+    }
+    catch (IOException e) {
+        System.out.println(e.getMessage());
+    }
+    finally {
+
+        if (fileInputStream != null){
+            try {
+                fileInputStream.close();
+            }
+            catch (IOException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+
+        if (fileOutputStream != null){
+            try {
+                fileOutputStream.close();
+            }
+            catch (IOException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+
+    }
+
+}
+else {
+    System.out.println("Dosya Bulunamadı ... ");
+}
