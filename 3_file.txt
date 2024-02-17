@@ -1,0 +1,34 @@
+*
+*
+*
+
+File file = new File("C:\\Users\\developer\\Desktop\\sample.txt");
+
+System.out.println(file.exists());
+System.out.println(file.canRead());
+System.out.println(file.canWrite());
+System.out.println(file.isDirectory());
+System.out.println(file.getAbsolutePath()); // dosyanın path'ini döner
+System.out.println(file.getParent()); // bir üst dizini döndürür
+System.out.println(file.length()); // dosyanın içindeki byte sayısını döner
+
+System.out.println(file.lastModified()); //milisaniye cinsinden döner
+System.out.println(new Date(file.lastModified()));
+
+File file2 = new File("C:\\Users\\developer\\Desktop\\ornek.txt"); 
+
+if (!file2.exists()) {
+    try {
+        file2.createNewFile();
+    }
+    catch (IOException e) {
+        e.printStackTrace();
+    }
+}
+
+if(file2.exists()){
+    boolean isDeleted = file2.delete();
+    System.out.print(boolean);
+}
+
+

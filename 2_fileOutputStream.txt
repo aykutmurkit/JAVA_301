@@ -1,0 +1,29 @@
+*
+*
+*
+
+File file = new File(hello.txt);
+FileOutputStream fileOutputStream = null;
+try {
+    fileOutputStream = new FileOutputStream(file);
+    fileOutputStream.write("Hello World".getBytes());
+}
+catch (IOException e) {
+    System.out.print(e.getMessage());
+}
+finally {
+    if (fileOutputStream != null) {
+        try {
+            fileOutputStream.close();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+*
+*
+*
+
+
