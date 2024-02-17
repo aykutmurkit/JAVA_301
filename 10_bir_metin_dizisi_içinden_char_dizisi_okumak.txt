@@ -1,0 +1,61 @@
+// FileReader sınıfından Reader nesnesi oluşturularak bir metin
+// dosyası içinden char dizisi okunabilir.
+
+*
+*
+*
+
+File file = new File("C\\Users\\Desktop\\Lorem.txt");
+
+if(file.exists()){
+    FileReader fileReader = null;
+    try {
+        fileReader = new FileReader(file);
+
+        /* // YÖNTEM 1
+
+            int c = 0;
+            while ((c = fileReader.read) != -1) {
+                System.out.println((char)c);
+            }
+
+        */
+
+        /* // YÖNTEM 2
+
+            CHAR [] buffer = new char[(int) file.length()];
+            fileReader.read(buffer); // gidiyor buffera basıyor.
+            System.out.println(buffer); // ilkinden bin kat daha hızlı bu yöntem 
+            
+        */
+
+        /* // YÖNTEM 3 // TODO ANLAMADIM.
+        
+            char [] buffer = new char[1024];
+            int length = 0;
+            StringBuilder builder = new StringBuilder();
+            while((length = fileReader.read(buffer)) != -1{
+                builder.append(Array.copyOfRange(buffer, 0, length));
+            })
+
+        
+        */
+
+    }
+    catch (IOException e) {
+        System.out.println(e.getMessage());
+    }
+    finally {
+        if (fileReader != null){
+            try{
+                fileReader.close();
+            }
+            catch (IOException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+    }
+}
+else {
+    System.out.println("Dosya Bulunamadı ... ");
+}
