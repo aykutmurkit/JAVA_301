@@ -1,0 +1,28 @@
+// downlaoder uygulaması
+
+*
+*
+*
+
+Scanner scanner = new Scanner (System.in);
+System.out.print("URL Giriniz: );
+String line = scanner.nextLine();
+scanner.close();
+
+try {
+    URL url = new URL(line);
+    HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+    InputStream inputStream = connection.getInputStream();
+    FileOutputStream fileOutputStream = new FileOutputStream(String.valueOf(System.currentTimeMillis()));
+
+    byte [] buffer = new byte[1024];
+    int length = 0;
+    while ((length = inputStream.read(buffer)) != 0) {
+        fileOutputStream.write(Arrays.copyOfRange(buffer, 0, length));
+    }
+    fileOutputStream.close();
+
+}
+catch (Exception e) {
+    e.printStackTrace();
+}
