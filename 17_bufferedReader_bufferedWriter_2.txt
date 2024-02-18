@@ -26,11 +26,17 @@ catch (IOException e) {
     e.printStackTrace();
 }
 finally {
-    if(bufferedReader != null){
+    try {
+        if(bufferedReader != null){
         bufferedReader.close();
     }
     if(fileWriter != null){
         fileWriter.close();
     }
+    }
+    catch (IOException e2){
+        e2.printStackTrace;
+    }
+
 
 }
