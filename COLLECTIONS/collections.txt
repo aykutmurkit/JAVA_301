@@ -1,0 +1,12 @@
+
+Collections 
+
+-   java.util paketinin içirisinde, JAVA'nın en kuvvetli alt sistemlerinden biri olan
+    Collections Framework yer almaktadır.
+
+-   Bir grup nesnenin yönetilmesini sağlar
+
+-   Colection Framework JAVA'ya J2SE 1.2 versyonu ile birlikte dahil olmuştur.
+
+-   Distionary, Vektor, Stack ve Properties sınıflarının eksiklerinin çözümüne
+    yanıt olarak Collections Framework olarak verilmiştir.
