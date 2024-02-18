@@ -1,0 +1,52 @@
+
+*
+*
+*
+
+// şu an main içindeyiz.
+
+public static void main(String [] args) {
+
+    Student stu = new Student();
+    stu.setName("aykut");
+    stu.setNumber(345);
+  
+    File file = new File("student.bin");
+    FileOutputStream fileOutputStream = null;
+    ObjectOutputStream objectOutputStream = null;
+
+    try {
+        fileOutputStream = new ObjectOutputStream(file);
+        objectOutputStream = new ObjectOutputStream(fileOutputStream);
+        objectOutputStream.write(stu);
+    } 
+    catch (Exception e) {
+        e.printStackTrace();
+    }
+    finally {
+        try{
+            if(objectOutputStream != null){
+                objectOutputStream.close();
+            }
+            if(fileOutputStream != null){
+                fileOutputStream.close();
+            }
+        }
+        catch (Exception e2) {
+            e2.printStackTrace();
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
