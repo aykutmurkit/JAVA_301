@@ -1,0 +1,34 @@
+
+/*
+FileInputStream ile okuyacağız ve içeriğini ekrana binary olarak basacağız
+
+dosyadaki karakterlerin ascii karşılıkları yazılır ekrana 
+*/
+
+
+*
+*
+*
+
+File file new File("output.dat");
+FileInputStream fileInputStream = null;
+
+try {
+    int c = 0;
+    while ((c = fileInputStream.read) != -1) {
+        System.out.println(c);
+    }
+}
+catch (IOException e) {
+    System.out.println(e.getMessage());
+}
+finally {
+    if (fileInputStream != null){
+        try {
+            fileInputStream.close();
+        }
+        catch (IOException e) {
+            System.out.println(e.getMessage);
+        }
+    }
+}
