@@ -1,0 +1,65 @@
+
+Serileştirme
+
+- Serileştirme, nesnenin durumunu byte akışına yazma işlemidir.
+- Dosyalara nesneler yazılabilir ve okunabilir.
+- nesne giriş-çıkış işlemleri serileştirme ismiyle anılır
+- Diğer dillerde serileştirme zor olabilir çünkü nesneler başka nesnelere referans olabilir.
+  ancak serileştirme java da kolay hale gelmiştir.
+
+bir sınıf serileştirilecekse;
+
+- sınıf public olarak deklare edilmelidir.
+- sınıf serializable arayüzünü implement etmek zorundadır.
+- sınıfın yapıcı metotodunda argüman olmamalıdır.
+- sınıfın tüm alanları (ilkel tipler veya seri nesneler dahil) serileştirilebilmelidir.
+
+*
+*
+*
+
+serializable marker interface tir.
+
+public class Student implements Serializable{
+
+    private int number;
+    private String name;
+
+
+    public Ogrenci(){
+
+    }
+    public Ogrenci(int number, String name){
+        this.number = number;
+        this.name = name;
+    }
+
+    public int getNumber(){
+        return number;
+    }
+
+    public void setNumber(int number){
+        this.number = number;
+    }
+
+    public String getName(){
+        return name;
+    }
+
+    public void setName(String name){
+        this.name = name;
+    }
+
+    @Override
+    public boolean equals(Object obj){
+        Student student = (Student) obj;
+        return this.number == student.number;
+    }
+
+    @Override
+    public String toString(){
+        return "Number: "+number+" Name: "+name;
+    }
+
+
+}
