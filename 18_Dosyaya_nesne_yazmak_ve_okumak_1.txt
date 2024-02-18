@@ -20,6 +20,8 @@ bir sınıf serileştirilecekse;
 
 serializable marker interface tir.
 
+nesne içinde başka bir nesneyi field olarak alacaksan o nesnenin sınıfta serializable arayüzünü implemente etmesi gerekir.
+
 public class Student implements Serializable{
 
     private int number;
