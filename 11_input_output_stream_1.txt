@@ -17,4 +17,27 @@ soyut olmayan alt sınıflar bu metotları içermek zorundadır.
 *
 *
 
-File file = new file
+File file = new File ("output.dat");
+FileOutputStream fileOutputStream = null;
+Scanner scanner = new Scanner(System.in);
+try {
+    fileOutputStream = new FileOutputStream(file);
+    String line = null;
+    while (!(line = scanner.nextLine()).equals("quit")){
+        fileOutputStream.write(line.getBytes();)
+    }
+}
+catch (IOException e) {
+    System.out.println(e.getMessage());
+}
+finally {
+    if ( fileOutputStream != null ) {
+        try {
+            fileOutputStream.close();
+        }
+        catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    scanner.close();
+}
