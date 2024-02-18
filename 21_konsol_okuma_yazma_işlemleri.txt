@@ -1,0 +1,22 @@
+kullanıcı giriş-çıkış işlemleri için konsol kullanımına ilişkin üç farklı yöntem gösterilecektir.
+
+-   System.in (scanner class)
+-   System.out 
+-   Console Class (JDK 6 sonrası)
+
+system.in ve system.out içerisinde buffer kullanır.
+
+Console console = System.console();
+
+okumak için readline(); kullanılır.
+
+hassas bilgi okuyacaksan readPassword(); bu şekilde echo özelliği devre dışı kalır.
+
+yazmak için printf kullanılabilr.
+
+
+*
+*
+*
+
+
