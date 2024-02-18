@@ -1,0 +1,25 @@
+// linkten gelen mesajı konsola yazma
+
+
+
+*
+*
+*
+
+try {
+    URL url = new URL("");
+    HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+    InputStream inputStream = connection.getInputStream();
+    InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
+
+    char [] buffer = new char[1024];
+    StringBuilder stringBuilder = new StringBuilder();
+    int length = 0;
+    while ((length = inputStreamReader.read(buffer)) != -1) {
+        builder.append(Arrays.coptOfRange(buffer,0,length));
+    }
+    System.out.println(builder.toString());
+}
+catch (Exception e) {
+    System.out.println(e.getMessage());
+}
