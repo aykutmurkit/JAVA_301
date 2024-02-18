@@ -1,0 +1,44 @@
+
+*
+*
+*
+
+File file = new File("C:\\Users\\aykut\\Desktop\\lorem.txt");
+BufferedReader bufferedReader = null;
+FileReader fileReader = null; 
+
+try {
+    fileReader = new FileReader(file);
+    bufferedReader = new BufferedReader(fileReader);
+    String line = null;
+    while ((line = bufferedReader.readline()) != null){
+        System.out.println(line);
+    }
+}
+catch (Exception e) {
+    System.out.println(e.getMessage());
+}
+finally {
+    if ( bufferedReader != null ) {
+        try {
+            bufferedReader.close();
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    if ( fileReader != null ) {
+        try {
+            fileReader.close();
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
+
+
+}
