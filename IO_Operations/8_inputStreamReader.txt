@@ -1,0 +1,52 @@
+*
+*
+*
+
+File file = new File("test.txt");
+FileInputStream fileInputStream = null;
+InputStreamReader inputStreamReader = null;
+BufferedReader bufferedReader = null;
+
+try {
+    fileInputStream = new FileInputStream(file);
+    inputStreamReader = new InputStreamReader(fileInputStream);
+    bufferedReader = new BufferedReader(inputStreamReader);
+    String line = null;
+    while((line = bufferedReader.readLine()) != null){
+        system.out.println(line);
+    }
+}
+catch (IOException e) {
+    System.out.println("e.getMessage");
+}
+finally {
+    
+    if ( bufferedReader != null) {
+        try {
+            bufferedReader.close();
+        }
+        catch (IOException e){
+            System.out.println("e.getMessage");
+        }
+    }
+
+    if ( inputStreamReader != null) {
+        try {
+            inputStreamReader.close();
+        }
+        catch (IOException e){
+            System.out.println("e.getMessage");
+        }
+    }
+
+    if ( fileInputStream != null) {
+        try {
+            fileInputStream.close();
+        }
+        catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+
+}
