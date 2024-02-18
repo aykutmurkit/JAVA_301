@@ -1,0 +1,27 @@
+
+// url ile aldığımınız metni pc de oluşturulan bir txt ye atma 
+
+*
+*
+*
+
+
+try {
+    URL url = new URL("http://www.w3.org/TR/PNG/iso_8859-1.txt");
+    HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+    InputStream inputStream = connection.getInputStream();
+    InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
+
+    FileOutputStream fileOutputStream new FileOutputStream("output.txt");
+    int length = 0;
+    while ((length = inputStreamReader.read(buffer)) != -1) {
+        fileOutputStream.write(new String(Arrays.copyOfRange(buffer,0,length)).getBytes());
+    }
+}
+catch (Exception e) {
+    System.out.println(e.getMessage());
+}
+
+*
+*
+*
