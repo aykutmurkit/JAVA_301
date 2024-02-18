@@ -1,0 +1,36 @@
+
+flash ile bufferdan dosyaya hemen yazabilirsin 
+flash kullanmazsan quit yapana kadar yada buffer dolana kadar ramde tutulur.
+
+*
+*
+*
+
+File file = new File("input.txt");
+BufferedWriter bufferedWriter = null;
+FileWriter fileWriter = null;
+
+try {
+    fileWriter = new FileWriter(file);
+    bufferedReader = new BufferedReader(fileWriter);
+    Scanner scanner = new Scanner(System.in);
+    String line = null;
+
+    while(!(line = scanner.newLine()).equals("quit")) {
+        bufferedReader.write(line);
+        // bufferedReader.flush();
+    }
+
+}
+catch (IOException e) {
+    e.printStackTrace();
+}
+finally {
+    if(bufferedReader != null){
+        bufferedReader.close();
+    }
+    if(fileWriter != null){
+        fileWriter.close();
+    }
+
+}
