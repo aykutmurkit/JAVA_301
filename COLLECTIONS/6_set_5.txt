@@ -1,0 +1,44 @@
+LinkedHashSet sınıfı
+
+hashSet sınıfından kalıtım almıştır.
+generic bir sınıftr.
+
+class LinkedHashSet<E>
+
+Kümeye yapılan girileri bağlı liste (linkedList) olarak saklar.
+
+HashSet atasınıfında ve arayüzlerinde bulunan metotlar haricinde, kendi içerisinde metot tanımlamasına sahip değildir.
+
+*
+*
+*
+
+// uniquetir.
+
+LinkedHashSet<Integer> hashSet = new LinkedHashset<>();
+hashSet.add(1);
+hashSet.add(2);
+hashSet.add(4);
+hashSet.add(3);
+hashSet.add(5);
+hashSet.add(6);
+
+System.out.println(hashSet.size());
+System.out.println(hashSet.isEmpty());
+
+Iterator<Integer< iterator = hashSet.Iterator();
+while(iterator.hasNext()){
+    Integer next = iterator.next();
+    System.out.println(next);
+}
+
+
+sırası ilk eklenen başa gelir  en son 4 eklersek sırasın sonunda o olur.
+
+----------------------
+-- custom sınıf ile --
+----------------------
+
+pojo ekledin Araba olsun.
+
+hashCode() ile equals() methodlarını override ederek yine uniquelik sağlarsın. ıterator ile veriyi çekerken.
