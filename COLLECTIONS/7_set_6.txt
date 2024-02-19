@@ -1,0 +1,30 @@
+TreeSet Sınıfı
+
+AbstractSet sınıfından kalıtım almıştır ve NavigableSet arayüzününü implemente eder
+generic bir sınıftır.
+
+class TreeSet<E>
+
+depolamak için ağaç kullanan koleksiyonlar yaratır.
+Depladığı elementleri artan sırayla sıralı olarak olarak kaydeder.
+Veriye erişip çekme zamanı hızlıdır.
+
+*
+*
+*
+
+TreeSet<String> treeSet = new TreeSet<>();
+treeSet.add("MAVi");
+treeSet.add("SİYAH");
+treeSet.add("KIRMIZI");
+treeSet.add("SİYAH");
+
+System.out.println(treeSet.size());
+
+Iterator<String> iterator = treeSet.iterator();
+while(iterator.hasNext()){
+    String next = iterator.next();
+    System.out.println(next);
+}
+
+
