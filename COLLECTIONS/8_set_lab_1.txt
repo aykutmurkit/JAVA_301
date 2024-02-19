@@ -1,0 +1,40 @@
+Sayısal loto uygulaması
+
+*
+*
+*
+
+// sıralı ve unique olması için  sortedSet seçtik
+
+public static void doldur(SortedSet<Integer> integers){
+    intergers.clear();
+    Random random = new Random();
+    while(integers.size() < 6){
+        int sayi = random.nextInt(49) +1;
+        integers.add(sayi);
+    }
+    
+}
+
+public static void main (String [] args){
+    SortedSet<Integers> integers = new TreeSet<>();
+    doldur(integer);
+
+    Iterator<Intiger> iterators = integers.iterator();
+    while(iterator.hasNext()){
+        System.out.println(iterator.next()+"\t");
+    } 
+
+}
+
+
+
+
+
+
+
+
+
+*
+*
+*
