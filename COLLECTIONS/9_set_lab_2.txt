@@ -1,0 +1,22 @@
+
+// Integer sınıfında hashCode ve equals methodları override edildiği için 
+LinkedhashSEt kullandığında içerisi unique kalır.
+
+
+Scanner scanner = new Scanner ();
+System.out.println("Çıkmak için -1 giriniz");
+
+LinkedHashSet<Integer> integers = new LinkedHashSet<Integer>();
+
+int i = 0;
+
+while((i = scanner.nextInt()) != -1 ){
+    integers.add(i);
+}
+
+System.out.println("Sayı adedi: "+integers.size());
+
+Iterator<Integer> iterator = integers.iterator();
+while(iterator.hasNext()){
+    System.out.println(iterator.next());
+}
