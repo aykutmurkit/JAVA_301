@@ -1,0 +1,68 @@
+HashSet Sınıfı
+
+AbstractSet sınıfından kalıtım almıştır ve Set arayüzünü implemente eder.
+Generic bir sınıftır.
+
+class HashSet<E>
+
+Depolamak için hash tablosu kullanan koleksiyonlar yaratır.
+
+Hash tablosu bilgiyi hashing denen bir yöntem ile saklar.
+Hashing verinin bütünlüğünün korunumu için kullanılır.
+
+Hashset atasınıfında ve arayüzlerinde bulunan metotlar haricinde, kendi içerisnde metot tanımlamasına sahip değildir.
+
+HashSet içersinde bulunan elemanların sıralı olmasını garanti etmez çünkü hashing işlemi yeterince vakit almaktadır.
+
+Sıralı depolama için treeSet koleksiyonları kullanılması önerilir.
+
+*
+*
+*
+
+hashSet<String> hashSet = new HashSet<String>();
+
+hashSet.add("İSTANBUL");
+hashSet.add("ANKARA");
+hashSet.add("İZMİR");
+hashSet.add("İSTANBUL");
+
+System.out.println(hashset.size()); // bunu yazdığın zaman 3 değerini alırsın çünkü unique'tir.
+
+Iterator<String> iterator = hashSet.iterator();
+while(iterator.hasNext()){
+    iterator.next = iterator.next();
+    System.out.println(next);
+}
+
+
+// sıralı değildir. Her sorguladığında farklı gelebilir.
+
+-------------------------------------
+-- CUSTOM SINIFLAR İÇİN NASIL OLUR --
+-------------------------------------
+
+Student isminde bir pojo oluşturalım. Comperable interface'ini implemente etmesine gerek yok 
+
+arka arkaya aynı değerde iki nesne eklersek bunu algılayamaz. bunun sebebi hashset iki nesnenin aynı olup olmadığını hashcode metodu ile anlamaktadır.
+hashCode(); metodu bir integer değer döndürür.
+
+bunu Student sınıfında override edersen;
+
+@Override
+public int hashCode(){
+    return Integer.valueOf(tcno);
+}
+
+bu şekilde hashCode'dan dönen değer integer olmaz her nesnenin  tcsi olur ama hala uniquelik sağlayamazsın.Bunun sebebi
+hashSet ile olarak hashcode methoduna bakmakta eğer geriye dönen iki değerde aynıysa bu seferde equals methoduna bakar ancak bu da objenin bellekteki adresine bakar 
+bunlar da farklı olduğu için override etmen lazım
+
+@Override
+public boolean equals (Object other){
+    Student stu = (Student) other;
+    return this.stuNo.equals(stu.stuNo);
+}
+
+uygulamayı çalıştırdığında bu sefer uniquelik sağlayarak çekersin. Ama dikkat et yine çekebilirsin sadece iterator ile çekerken uniquelik sağlıyorsun.
+
