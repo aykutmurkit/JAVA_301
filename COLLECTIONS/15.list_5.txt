@@ -1,0 +1,48 @@
+Vector sınıfla
+
+
+AbstractList sınıfından kalıtım almıştır ve list arayüzünü implemente eder.
+
+ArrayList'e benzer dinamik bir dizidir.
+
+Generic'ler güçlenerek yeniden düzenlenmiş bir sınıftır.
+
+class Vector<E>
+
+Vector'lerin varsayınlan boyutu 10 olarak belirtilmiştir.
+
+//vectör sınıfının arraylistlerden farkı treadsafe olmasıdır. ?
+
+.
+.
+.
+
+Vector<String> vector = new Vector<>(4);
+
+vector.add("kedi");
+vector.add("köpek");
+vector.add("kaplan");
+vector.add("at");
+vector.add("tavşan");
+
+for(int i = 0 ; i < vector.size() ; i++){
+    String string = vector.get(i);
+    System.out.println((i)+" "+string);
+}
+
+System.out.println(vector.capacity());
+
+
+// vectörün içinde istediğimi eleman var mı yok mu diye kontrol için // boolean döner
+System.out.println(vector.contains("kedi")); // true döner
+
+//kaçıncı indexte olduğunu gönderir. yoksa -1 döner.
+System.out.println(index.Of("kaplan")); // 2 döner
+
+
+//vectörün içini boşaltmak için 
+vector.clear();
+
+
+
+System.out.println();
