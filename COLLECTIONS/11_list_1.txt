@@ -1,0 +1,96 @@
+List
+
+List bir arayüzdür. Katı (concrete) implementasyonları için;
+
+-   ArrayList
+-   Vector
+-   Stack
+-   LinkedList
+
+verilebilir.
+
+*   List giriş sırasına göre oluşturulanve unique olmayan nesneleri içerir.
+
+*   Generic bir arayüzdür.
+
+interface List<E>
+
+*   Listede null elementlere müsaade edilmez.
+
+*   İhtiyaca göre ArrayList veya LinkedList kullanılabilir.
+
+*   ArrayList daha çok çağırma, daha az silme
+
+*   LinkedList daha çok silme, daha az çağırma
+
+*   Stack  ve Vector sınıfları eskidir. ancak kaldırılmamıştır. miras sınıflarıdır. Yeni projelerde kullanılmazlar.
+
+
+***********************
+** LinkedList Sınıfı **
+***********************
+
+-   AbstractSequentialList sınıfından kalıtım almıştır ve List,Deque,Queue arayüzlerini implemente eder.
+-   Bağlı listerler(Lşnked List) veri yapısını sağlar
+-   Generic bir sınıftır.
+
+class LinkedList<E>
+
+-   Depolamak için ağaç kullanan koleksiyon yaratır.
+-   Depoladığı elementleri artar sırayla sıralı olarak kaydeder.
+
+
+***********
+** ÖRNEK **
+***********
+
+*
+*
+*
+
+LinkedList<Integer> integers = new LinkedList<>();
+integers.add(10);
+integers.add(20);
+integers.add(30);
+integers.add(20);
+integers.add(10);
+
+
+integers.add(2,10); // ikinci indexe 10 ekler ve diğerlerini kaydırır.
+
+System.out.println("Eleman sayisi: "+integers.size(9));
+
+Iterator<Integer> iterator = integers.iterator();
+while(iterator.hasNext()){
+    Integer next = iterator.next();
+    System.out.println(next);
+}
+
+
+System.out.println("ilk eleman: " +integers.get(0));
+System.out.println("son eleman: +integers.get(integers.size()-1));
+
+integers.addfirst(33);
+System.out.println("ilk eleman: "+getfirst());
+
+integers.addLast(44);
+System.out.println("son eleman: "+getLast());
+
+int indexOF = integers.indexOf(33);
+System.out.println(indexOf); // ilk 20 değeri nerede
+
+
+System.out.println(integers.lastIndexOf(20)); sondan bakmaya başlar.
+
+integers.remove(); // parametre vermezsen listenin en başındaki elemanı kaldırır.
+
+integers.remove(3); // üçüncü indextekini kaldır. // parametre olrak integer almıştır
+
+integers.remove(33); // 33 olan objeyi kaldırır. parametre olarak obje alan constructorı çağır.
+
+
+
+
+
+
+
