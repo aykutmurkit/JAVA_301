@@ -1,0 +1,8 @@
+custom sınıfla arraylist kullanımı.
+
+equals overrride ettik
+
+hashcode override ettik.
+
+serializable sınıfını implement et.
+
