@@ -1,0 +1,8 @@
+custom bir sınıfı vectör içinde tutma
+
+-   serializable implemente edilir.
+
+-   equals metotdu override aldı
+-   hashcode metodu override edildi.
+
+-    tostring override edildi.
