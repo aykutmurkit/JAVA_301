@@ -1,0 +1,7 @@
+null
+
+custom sınıflar ile işlem yaptı.
+
+custum sınıfın içindeki hashcode ile equals methodlarını override etti
+
+toString metotdunuda override etti.
