@@ -1,0 +1,33 @@
+
+-   Map anahtar ve değer arasındaki ilişkiyi diğer bir deyişle 
+    anahtar/değer çiftini saklayan bir nesnedir.
+
+-   Verilen bir anahtara istinaden, anahtara karşılık gelen değer bulunabilir.
+-   anahtar ve değer ayrı ayrı birer nesnedir.
+-   anahtar unique olmak zorundadır.
+-   değer aynı olabilir.
+
+-   Iterator arayüzünü implemente etmez. 
+-   Map için koleksiyon görünümü(collection view) elde edildikten sonra iterator yapısı kullanılabilir.
+
+-   Map bir arayüzdür. Katı(concrete) , implementasyonları için;
+
+    *   HashMap
+    *   LinkedHashMap
+    *   TreeMap
+
+-   Generic bir arayüzdür.
+
+arayüz Map<K,V>
+
+-   Map giriş olarak anahtar/değer çifti alır.
+-   anahtar biliniyorsa değer çağrılabilir.
+-   Map sıralama yapmaz ve eşsiz anahtarlar ister.
+-   TreeMap eşleme tablosunda anahtarları sıralı şekilde tutar.
+
+.
+.
+.
+
+
+HashMap<Integer>
