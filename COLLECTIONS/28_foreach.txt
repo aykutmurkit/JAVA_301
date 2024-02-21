@@ -1,0 +1,18 @@
+.
+.
+.
+
+iterator ile firlikte gelmiştir.
+
+java 5 ile gelmiştir.
+
+for (Integer i : students){
+    System.out.println(i);
+}
+
+FOR EACH iteratörle aynı methodları kullanır.
+
+foreach kullanılması için kullanılan sınıfın iterable sınıfını implement etmesi gerekiyor.
+.
+.
+.
