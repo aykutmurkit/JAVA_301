@@ -25,9 +25,32 @@ arayüz Map<K,V>
 -   Map sıralama yapmaz ve eşsiz anahtarlar ister.
 -   TreeMap eşleme tablosunda anahtarları sıralı şekilde tutar.
 
+-   hashmap içinde olmayan bir değer döndürürsen null döner.
+
 .
 .
 .
 
+HashMap<Integer, String> hashMap = new HashMap<>();
+hashMap.put(34,"Istanbul");
+hashMap.put(35,"Izmir");
+hashMap.put(6,"Ankara");
 
-HashMap<Integer>
+System.out.println(hashMap.size()); // mapin sizenı verir
+
+// aynı key değeri ile yeni bir değer girdiğinde override eder değişir aynı değerden iki tane daha olmaz.
+
+String string = hashMap.get(10);
+System.out.println(string);
+
+
+Set<Interger> keySet = hashmap.keySet();
+
+Iterator<Integer> iterator = keySet.iterator();
+while(iterator.hasNext()){
+    Integer key = iterator.next();
+    System.out.print("key: "+key);
+    String value = hashMap.get(key);
+    System.out.println(value);
+}
+
