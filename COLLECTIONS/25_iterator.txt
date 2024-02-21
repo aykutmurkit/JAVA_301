@@ -1,0 +1,11 @@
+Iterator
+
+-   Iterator, bir koleksiyonun elemanları üzerinde birer birer ilerlememizi sağlayan soyut veri tipidir.
+-   generic bir arayüzdür.
+
+metodları:
+
+    *   next: koleksiyonun sıradaki elemanını, eleman yoksa hata durumunu oluşur.
+    *   hasNext: koleksiyonda daha fazla eleman farsa true yoksa false döner
+    *   remove: iterator tarafından döndürülen son elemanı siler.
+
