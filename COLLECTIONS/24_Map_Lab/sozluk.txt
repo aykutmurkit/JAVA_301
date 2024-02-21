@@ -1,0 +1,4 @@
+Araba:Car
+Ev:Home
+Kalem:Pencil
+Hayvan:Animal
