@@ -1,0 +1,22 @@
+AutoBoxing
+
+Java Koleksiyonları ilkel tip eklemeyi yasaklamıştır.
+eklenecek eleman nesne tipinde sarılmalıdır.(wrap)
+
+Autoboxing: ihtiyaç olduğunda ilkel tiplerin otomatik olarak nesne tipinde sarılmasıdır.
+
+Auto-unboxing ihtiyaç olduğunda ilkel tiplerin otomatik olarak nesne tipinden çıkarılmasıdır.
+
+bu özellik sayesinde manuel olarak ilkel tipten nesneye veya nesneden ilkel tipe çevirme işlemi yapmmamıza gerek kalmamıştır.
+
+farklı veri tipleriyle işlem yaparken de dkullanılır.
+
+primitive typeler küçük sarmalayanları büyük harfle yazılır.
+
+.
+.
+.
+
+Double d = 10.0;
+
+double x = d;
