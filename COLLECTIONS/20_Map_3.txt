@@ -1,0 +1,33 @@
+SortedMap arayüzü
+
+TreeMap NavigableMap sınıfını implemente alır ve NavigableMap ise SortedMap sınıfını kalıtım alır. 
+
+-   SortedMap, Map sınıfını kalıtım alır.
+-   Generic bir arayüzdür.
+
+arayüz SortedMap<K,V>
+
+galiba concrete sınıfı TreeMap diagramda o şekilde gözüküyor ama emin olamadım.
+
+Yapılan girişlerin artan sıra ile sıralı bir şekilde saklanmasını sağlar. Mesela keyleri String ise A önce gelir giriş sırasına bağlı olmaksızın.
+
+Altharitalarında (submaps) verimli manipülasyonlarını içerir.
+
+SortedMap<String, String> sortedMap = new TreeMap<>();
+
+sortedMap.put("Ev","Home");
+sortedMap.put("Araba","Car");
+sortedMap.put("Tren","Train");
+sortedMap.put("Masa","Table");
+
+System.out.println(sortedMap.size());
+
+String value = sortedMap.get("Araba");
+System.out.println(value);
+
+Set<String> keySet = sortedMap.keySet();
+Iterator<String> iterator = keySet.iterator();
+while(iterator.hasNext()){
+    String key = iterator.next();
+    System.out.println("Key: "+key+" value: "+sortedMap.get(key));
+}
