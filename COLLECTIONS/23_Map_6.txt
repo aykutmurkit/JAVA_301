@@ -1,0 +1,14 @@
+
+hashmap custom class
+
+
+HashMap.put(2,new kitap("x", new Date(), "Aykut MÜRKİT"));
+HashMap.put(2,new kitap("Y", new Date(), "Ayhan MÜRKİT"));
+HashMap.put(2,new kitap("Z", new Date(), "Sibel MÜRKİT"));
+
+Set<Integer> keySet = hashMap.keySet();
+Iterator<Integer> iterator = keySet.iterator;
+while(iterator.hasNext()){
+    Integer key = iterator.next();
+    System.out.println("Key: "+key+"value: "+hashMap.get(key));
+}
