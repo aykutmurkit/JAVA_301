@@ -1,0 +1,50 @@
+custom sınıf ile hashmap
+
+sınıf serializable sınıfını implemente etmesi lazım.
+
+//hashcode(),equals(),toString() override et
+
+.
+.
+.
+
+HashMap<Integer,Sehir> hashMap = HashMap<>();
+
+hashMap.put(34,new Sehir("İstanbul",20_000_0000));
+hashMap.put(35,new Sehir("İzmir",6_000_000));
+hashMap.put(6,new Sehir("Ankara",8_000_000));
+
+System.out.println(hashMap.size());
+
+Sehir sehir = hashMap.get(34);
+System.out.println(sehir);
+
+// sadece keyleri dönmek için
+
+Set<Integer> keySet = hashMap.keySet();
+Iterator<Integer> iterator = keySet.iterator();
+while(iterator.hasNext()){
+    Integer key = iterator.next();
+    System.out.println("key: "+hashMap(key));
+}
+
+// sadece value'ları dönmek için 
+
+Collectin<Sehir> values = hashMap.values();
+Iterator<Sehir> iterator = values.iterator();
+while(iterator.hasNext()){
+    Sehir value = iterator.next();
+    System.out.println(value);
+}
+
+// hem key hem de value almak için entrySet kullanılır buda bir set döndürür.
+
+Set<Entry<Integer,Sehir>> entries = hashMap.entrySet();
+
+Iterator<Entry<Integer,Sehir>> iterator = entries.iterator();
+while(iterator.hasNext()){
+    Entry<Integer,Sehir> keyValue = iterator.next();
+    System.out.println(keyValue.getKey());
+    System.out.println(keyValue.getValue());
+    System.out.println("---------------------");
+}
