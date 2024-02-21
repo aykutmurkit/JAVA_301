@@ -1,0 +1,24 @@
+sorted map with custom class
+
+cinsiyetlerin tutulduğu bir enum var.
+
+.
+.
+.
+
+SortedMap<Integer,Kisi> sortedMap = new TreeMap<>();
+
+sortedMap.put(3. new Kisi("11951236510","aykut","mürkit",Cinsiyet.ERKEK));
+sortedMap.put(3. new Kisi("11951526510","irem","mürkit",Cinsiyet.KADIN));
+sortedMap.put(3. new Kisi("25620236510","ayhan","mürkit",Cinsiyet.ERKEK));
+sortedMap.put(3. new Kisi("11921562510","sibel","mürkit",Cinsiyet.KADIN));
+
+System.out.println(sortedMap.size());
+
+Set<Entry<Integer,Kisi>> entrySet = sortedMap.entrySet();
+
+Iterator<Entry<Integer,Kisi>> iterator = entrySet.iterator();
+while(iterator.hasNext()){
+    Entry<Integer,Kisi> entry = iterator.next();
+    System.out.println(entry.getKey()+" "+entry.getValue);
+}
