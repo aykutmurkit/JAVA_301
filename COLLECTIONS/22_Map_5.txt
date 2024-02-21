@@ -1,0 +1,47 @@
+HashMap Sınıfı
+
+AbstractMap sınıfından kalıtım alır ve map arayüzünü implemente eder. AbstractMap ise Map interfaceni implement eders.
+
+Generic bir sınıftır.
+
+Haritayı depolamak için hash tablosu kullanır.
+
+Kendi içerisinde tanımladığı başka metotları yoktur.
+
+Map'e eklenen elemanların sıralı olmasını garanti etmez.
+
+.
+.
+.
+
+HashMap<String, Double> hashMap = new HashMap<String, Double>();
+
+hashMap.put("Notebook",30000.0);
+hashMap.put("SmartPhone",70000.0);
+hashMap.put("Television",30000.0);
+hashMap.put("Camera",20000.0);
+
+System.out.println(hashMap.size());
+
+Set<String> keySet = hashMap.keySet();
+Iterator<String> iterator = keySet.iterator();
+while(iterator.hasNext()){
+    String key = iterator.next();
+    System.out.print("key: +key),
+    System.out.print(hashMap.get(key));
+}
+
+// silmek için 
+
+hashMap = remove("Camera");
+
+System.out.println(hashMap.isEmpty());
+
+hashMap.replace("Television",50000.0);
+
+Set<Entry<String,Double>> entrySet = hashMap.entrySet();
+Iterator<Entry<String,Double>> iterator2 = entrySet.iterator();
+while(iterator2.hasNext()){
+    Entry<String,Double> next = iterator2.next();
+    System.out.println(next.getKey()+" "+next.getValue)
+}
