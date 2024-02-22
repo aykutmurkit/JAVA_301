@@ -1,0 +1,73 @@
+lambda expression
+
+-   Java'nın devam eden gelişim ve geliştirme sürecinde
+    birçok yeni özellikler eklenmiştir.
+
+-   Lambda ifadelerinin Java'yı geliştirmeye katkısı iki ana 
+    sebebe dayanmaktadır.
+
+    1.  Dilin ifade gücünü artıran yeni kurallar eklenmesi
+    2.  API kütüphanelerine yeni yeteneklerin katılması
+
+-   Lambda ifadeleri tüm Java programcılarını etkileyecek seviyede
+    önemli özellikler getirmiştir.
+
+-   Lambda ifadelerinin Java uygulamalarını anlamak için 
+    anahtar iki unsur vardır. Lambda ifadesi ve fonksiyonel arayüz.
+
+Lambda Expression:
+
+    *   Temelde anonim yani isimsiz bir metotdur.
+    *   Bu metot kendisini icra etmez.
+    *   Fonksiyonel arayüz tarafından tanımlanan metodu implemente
+        etmek için kullanılır.
+    *   Genel olarak closures(kapanışlar) şeklinde ifade edilir.
+
+Fonksiyonel Arayüz(Functional Interface):
+
+    *   İçerisinde sadece ve sadece bir ader soyut metot 
+        bulunduran arayüze verilen isimdir.
+    *   Bu metot arayüzün kullanım amacını ifade eder.
+    *   Lambda ifadelerinin hedef tipini tanımlar.
+    *   SAM(single abstract method) yani tek soyut metot olarak da ifade edilir.
+
+Lambdanın temelleri :
+
+    *   Lambda ifadesi java dilini yeni bir syntax ve operatör ifadesi ile tanıştırmıştır.
+    *   Lambda iki farkı gövdeye sahip olabilir. Biri tek bir ifadeyi içerir. diğeri ise kod bloğunu
+
+-  lambda ifadeleri fonksiyonel arayüzde tanımlanan metotları implemente ederler.
+
+fonksiyonel arayüzde belirtilen veri tipi ile lambda ile çıkartığın tip eşleşmelidir.
+
+.
+.
+.
+
+public interface SayiOlustur{
+    double olustur();
+}
+
+public class Driver{
+    public static void main(String [] args){
+
+        // interfacelerin instance oluşturulmaz ama aşağıdaki gibi anonim bir class oluşturup method implemente edileblir.
+
+        SayiOlustur sayiOlustur = new SayiOlustur(){
+
+            @Override
+            public double olustur(){
+                return 15.0
+            }
+        }
+
+        bunun yerine lambda expression ile aşağıdaki gibi kısa bir şekilde yapabiliriz.
+
+        SayiOlustur sayiOlustur = () -> 15.0;
+
+
+        System.out.println(sayiOlustur.olustur());
+        
+
+    }
+}
