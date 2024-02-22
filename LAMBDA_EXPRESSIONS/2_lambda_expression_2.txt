@@ -1,0 +1,37 @@
+
+public interface Merhaba {
+    String selam();
+}
+
+public interface Merhaba' {
+    String selam(String s);
+}
+
+public interface topla {
+    double topla(double x,double y);
+}
+
+
+public class Driver {
+    public static void main(String []){
+
+        Merhaba merhaba = () -> "Merhaba";
+
+        System.out.println(merhaba.selam());
+
+        // output : merhaba olacaktır.
+
+        Merhaba2 merhaba2 = (s) -> "Merhaba "+s;
+
+        System.out.println(merhaba2.selam(Aykut));
+
+        // output : Merhaba Aykut olacaktır.
+
+        Topla topla = (a,b) -> a+b;
+
+        System.out.println(topla.topla(2+5));
+
+        // output: ekrana 7 değeri gelecektir.
+
+    }
+}
