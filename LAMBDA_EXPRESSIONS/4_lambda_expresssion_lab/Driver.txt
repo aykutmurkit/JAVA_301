@@ -1,0 +1,66 @@
+public class Driver {
+
+    public static void CinsiyeteGoreFiltrele(List<Kisi> kisiler, Kisi.Cinsiyet cinsiyet){
+
+        for (int i = 0 ; i < kisiler.size() ; i++){
+            kisiler.get(i);
+            if(kisi.getCinsiyet().equals(cinsiyet)){
+                System.out.println(kisi);
+            }
+        }
+    }
+
+    public static void yasaGoreListele(List<kisi> kisiler, int yas){
+        for(int i = 0 ; i < kisiler.size() ; i++){
+            Kisi kisi = kisiler.get(i);
+            if(kisi.getYas() >= yas){
+                System.out.println(kisi);
+            }
+        }
+    }
+
+    public static void yasAraliginaGoreListele(List<kisi> kisiler, int min, int max){
+        for(int i = 0 ; i < kisiler.size() ; i++){
+            Kisi kisi = kisiler.get(i);
+            if(kisi.getYas() > min && kisi.getYas() <= max){
+                System.out.println(kisi);
+            }
+        }
+    }
+
+
+
+    public static void main (String [] args){
+        
+        Kisi kisi1 = new Kisi("Aykut Mürkit",LocalDate.parse("1990-03-23"),"aykutmurkit@example.com",Kisi.cinsiyet.ERKEK);
+        Kisi kisi1 = new Kisi("Sibel Mürkit",LocalDate.parse("1995-02-09"),"sibelmurkit@example.com",Kisi.cinsiyet.KADIN);
+        Kisi kisi1 = new Kisi("Ayhan Mürkit",LocalDate.parse("1980-03-05"),"ayhanmurkit@example.com",Kisi.cinsiyet.ERKEK);
+
+
+    ArrayList<Kisi> kisiler = new ArrayList<>();
+    kisiler.add(kisi1);
+    kisiler.add(kisi2);
+    kisiler.add(kisi3);
+
+    cinsiyeteGoreFiltrele(kisiler, Kisi.Cinsiyet.KADIN);
+
+    yasaGoreListele(kisiler,30); // yaşı 30 dan büyük olanları getirecek.
+
+    yasAraliginaGoreListele(kisiler,5,30); // yası 5 ile 30 arasında olanları getirecek.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+}

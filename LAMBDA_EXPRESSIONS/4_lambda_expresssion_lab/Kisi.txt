@@ -1,0 +1,48 @@
+// imports...
+
+
+public class Kisi implements Serializable {
+
+    public enum Cinsiyet {
+        ERKEK, KADIN
+    }
+
+    private String isim;
+    private LocalDate dogumtarihi;
+    private String emailAdresi;
+
+//getter and setters
+//parametreli ve parametresiz constructors
+
+
+public int getYas(){
+    return LocalDate.now().getYear() - dogumTarihi.getYear();
+}
+
+@Override
+public int hashCode(){
+    return emailAdresi.hashCode();
+}
+
+@Override
+public boolean equals(Object o){
+    Kisi kisi = (Kisi)o;
+    return this.emailAdresi.equals(kisi.emailAdresi);
+}
+
+@Override
+public String toString(){
+    return "İsim:" + isim + ".Doğum Tarihi:" + dogumTarihi + ",Email:" + emailAdresi +",Cinsiyet"+ Cinsiyet;
+}
+
+
+
+
+
+
+
+
+
+
+
+}
