@@ -1,0 +1,32 @@
+
+public class Ogrenci implements Serializable {
+    private int numara;
+    private String ad;
+    privat int notOrtalaması;
+
+    // constructors
+    //getters and setters
+
+    @Override
+    public int hashCode(){
+        return numara;
+    }
+
+    @Override
+    public boolean equals(Object o){
+        Ogrenci ogrenci = (Ogrenci) 0;
+        return this.numara == ogrenci.numara;
+
+    }
+
+    @Override
+    public String toString(){
+        return "Numara:"+numara+",Ad:"+ad+".Not Ortalaması:"+notOrtalaması;
+    }
+}
+
+public class Driver{
+    public static void main(String [] args){
+        
+    }
+}
