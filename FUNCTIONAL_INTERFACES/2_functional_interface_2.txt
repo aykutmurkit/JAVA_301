@@ -1,0 +1,77 @@
+
+public class Urun implements Serializable {
+
+    private int id;
+    private String adi;
+    private double fiyat;
+
+    // constructors
+
+    // getters and setters
+
+
+    @Override
+    public int hashCode(){
+        return id;
+    }
+
+    @Override
+    public boolean equals(Object o){
+        Urun urun = (Urun) o;
+        return this.id == urun.id;
+    }
+
+    @Override
+    public String toString(){
+        return "ID:"+id+",Ad"+adi+",Fiyat:"+fiyat;
+    }
+
+}
+
+public class Driver{
+    public static void main(String [] args){
+
+        // supplier kullanımı
+
+        Supplier istediğimiz nesneye bize geri döndüren bir arayüzdür.
+
+        // anonim class ile birlikte
+
+        Supplier<Urun> supplier = new Supplier<Urun>(){
+
+            @Override
+            public Urun get(){
+                Urun urun = new Urun(1,"LAPTOP",30000);
+                return urun;
+            }
+        };
+
+        System.out.println(supplier.get());
+
+        // lambda ile birlikte
+
+        Suplier<Urun> supplier = () -> new Urun(1,"LAPTOP",30000);
+
+        //ayrıca ürün listesi de döndürebilirsin
+
+        // lambda da birden fazla satır kullanacaksa süslü parantezleri açman lazım ve sonunda return demen lazım.
+
+        Suplier<List<Urun>> supplier = () -> {
+            List<Urun> list = new ArrayList<>();
+            list.add(new Urun(1,"laptop",30000));
+            list.add(new Urun(1,"kalvye",1000));
+            list.add(new Urun(1,"mouse",800));
+            return list;
+        }
+
+        // consumer kullandık
+
+        supplier.get().forEach((u) -> System.out.println(u));
+
+
+
+
+
+
+    }
+}
