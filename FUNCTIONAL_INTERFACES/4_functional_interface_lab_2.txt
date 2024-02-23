@@ -1,0 +1,31 @@
+public class Driver{
+    public static void main(String [] args){
+
+        iki thread aynı anda çalışıyor.  aşağıda lambda ile runnable interfaceni kullandık.
+
+        System.out.println("Merhaba");
+        Scanner scanner = new Scaner(System.in);
+
+        Thread kullaniciGirisiThread = new thread(() -> {
+            while(true) {
+                System.out.println("Giriş: ");
+                String line = scanner.nextLine();
+                System.out.println(line.toUpperCase());
+            }
+        });
+
+
+
+
+
+
+        while(true){
+            System.out.println(new Date());
+            try{
+                Thread.sleep(1000);
+            } catch (InterruptedException e){
+                System.out.println(e.getMessage());
+            }
+        }
+    }
+}
