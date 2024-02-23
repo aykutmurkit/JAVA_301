@@ -1,0 +1,121 @@
+
+functional interface
+
+-   İçerisinde sadece bir adet soyut metot bulunduran arayüze verinen isimdir.
+-   Bu metot arayüzün kullanım amacını ifade eder.
+-   Lambda ifadelerinin hedef tipini tanımlan
+-   SAM (Single Abstract Method) yani tek soyut metot olarak da adlandırılır.
+
+// Önceden Tanımlanmış fonksiyonel arayüzler.
+
+-   Kendimiz fonksiyonel arayüz tanımlayabileceğimiz gibi, Java 8 tarafından java.util.function paketinde,
+    tanımlanmış fonksiyonel arayüzler bulunmaktadır.
+
+    *   UnaryOperator<T>
+    *   BinaryOperator<T>
+    *   Consumer<T>
+    *   Supplier<T>
+    *   Function<T,R>
+    *   Predica<T>
+
+    -----------------------------------------------------------------------------------------------------------------------------------------
+
+    .
+    .
+    .
+
+    @FuntionalInterface // bunu yazdığımızda functional interface içinde birden fazla metot tanımlanırsa derleme hatası ile karşılaşacağız.
+    public interface Matematik{
+        void islem(double a,double b);
+    }
+
+
+    public class Driver{
+        public static void main(String [] args){
+
+        //anonim class ile birlikte
+
+        Matematik matematik = new Matematik(){
+            @Override
+            public void islem(double a,double b){
+                System.out.println(a+b);
+            }
+        }
+
+        matematik.islem(10,20);
+
+        // lambda expresssion ile birlikte
+
+        Matematik matematikTopla = (x,y) -> System.out.println(x+y);
+
+        matematikTopla.islem(3,4);
+
+        Matematik matematikCarp = (x,y) -> System.out.println(x*y);
+        matematikCarp.islem(2,3);
+
+        Matematik matematikBol = (x,y) -> System.out.println(x/y);
+        matematikBol.islem(10,2);
+        }
+    }
+
+
+    ------------------------------------------------------------------------------------------------------------------------------------
+
+    ArrayList<String> sehirler = new ArrayList<>();
+    sehirler.add("İstanbul");
+    sehirler.add("Bursa");
+    sehirler.add("Aydın");
+    sehirler.add("Ankara");
+
+    ************************
+    ** CONSUMER INTERFACE **
+    ************************
+
+    // consumer interface'inin içinde sadece bir tane metot var o da accept metotdu.
+
+    // anonim sınıf ile consumer interface'i
+
+    sehirler.forEach(new Consumer<String>(){
+        @Override
+        public void accept(String t){
+            System.out.println(t);
+        }
+    });
+
+    // lambda expression ile daha kolay
+
+    sehirler.forEach((s) -> System.out.println(s));
+
+    *************************
+    ** PREDICATE INTERFACE **
+    *************************
+
+    boolean değer döndürmek için kullanılır.
+
+    // anonim sınıf ile birlikte...
+
+    Predicate<String> predicate = new Predicate<String>(){
+        @Override
+        public boolean test(String t){
+            return t.startsWith("B");
+        }
+    };
+
+    for(int i= 0 ; i < sehirler.size() ; ++){
+        String sehir = sehirler.get(i);
+        if(predicate.test(sehir)){
+            System.out.println(sehir);
+        }
+    }
+
+    // lambda expresssion ile ...
+
+    predicate<String> predicate2 = (s) -> s.startsWith("İ");
+
+    for(int i= 0 ; i < sehirler.size() ; ++){
+        String sehir = sehirler.get(i);
+        if(predicate2.test(sehir)){
+            System.out.println(sehir);
+        }
+    }
+
