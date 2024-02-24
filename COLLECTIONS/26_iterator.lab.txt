@@ -1,0 +1,59 @@
+iterator custom class
+
+public class Ogrenci implements Iterable<Integer>{
+
+    private String isim;
+    private int [] notlar;
+
+    private int index = 0;
+
+    // parametreli ve parametresiz constructor
+
+    // getters and setters
+
+    @Override
+    public Iterator<Integer> iterator(){
+        return new Iterator<Integer>() {
+
+            @Override
+            public boolean hasNext(){
+                return index < notlar.length;
+            }
+
+            @Override
+            public Integer next() {
+                return notlar[index++];
+            }
+        }
+    }
+
+
+
+
+   
+}
+
+public class Driver {
+    public static void main(String [] args){
+
+        Ogrenci ogrenci = new Ogrenci();
+        ogrenci.setIsım = "Aykut";
+        int [] notlar = new Int [2];
+        notlar[0] = 90;
+        notlar[1] = 85;
+        notlar[3] = 100;
+
+        ogrenci.setnotlar(notlar);
+
+        Iterator<Integer< iterator = ogrenci.iterator();
+        while (iterator.hasNext()){
+            Integer intiger = iterator.next();
+            System.out.println(intiger);
+        }
+
+
+
+
+
+    }
+}
