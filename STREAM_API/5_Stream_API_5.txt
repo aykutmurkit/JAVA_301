@@ -1,0 +1,78 @@
+
+public class Ogrenci implements Serializable {
+
+    private int no;
+    private String isim;
+    private int yas;
+
+    //constructors
+    //getter and setters
+    // override toString hashcode equals
+
+}
+
+public class Driver {
+    public static void main(String [] args){
+
+        ArrayList<Ogrenci> ogrenciler = new ArrayList<>();
+
+        ArrayList.add(new Ogrenci(1,"Aykut Mürkit",16));
+        ArrayList.add(new Ogrenci(2,"Sibel Mürkit",7));
+        ArrayList.add(new Ogrenci(3,"Ayhan Mürkit",14));
+        ArrayList.add(new Ogrenci(4,"İrem Mürkit",9));
+
+        //collect methodu streamden gelen değerleri bize list,set veya map olarak geri döndürür.
+
+        List<Ogrenci> collect = arrayList.stream()
+            .filter((o)->o.getIsim().startsWith("A"))
+            .collect(Collectors.toList());
+
+        collect.forEach(System.out::println);
+
+        // A ile başlayan öğrenciler gelecek.
+
+
+        List<Ogrenci> collect2 = arrayList.stream()
+            .filter((i) -> i.getYas()>8)
+            .collect(Collectors.toList());
+        
+        collect2.forEach(System.out::println);
+
+        // 8 yaşında büyüklerin hepsi geldi
+
+        -------------------------------------------------------------------------------------------
+
+        // listeyi gruplamak için
+
+        Map<Integer,List<Ogrenci>> gruplama = arrayList.stream()
+            .collect(Collectors.groupingBy(o->o.getYas()));
+
+        Set<Integer> keySet = gruplama.keySet();    
+        Iterator<Integer> iterator = keySet.iterator();
+        while(iterator.hasNext(){
+            Integer key = iterator.next();
+            System.out.println(key+" "+gruplama.get(key));
+        })
+
+        // bu şekilde bir output olacak.
+        16 [nesne1]
+        7  [nesne2,nesne3]
+        14 [nesne4]
+
+        -------------------------------------------------------------------------------------------
+
+        double yasOrtalamasi = arrayList.stream()
+            .collect(Collectors.averageingInt(o->o.getYas()));
+
+        System.out.println(yasOrtalamasi); // 11 olarak gözükecek.
+
+        -------------------------------------------------------------------------------------------
+
+        arrayList.stream()
+        .collect(Collectors.summurizingInt(o->o.getYas()));
+
+        output: IntSummaryStatistics{count=4, sum=44, average=11.000000, max=16} olarak gözükür.
+
+    
+    }
+}
