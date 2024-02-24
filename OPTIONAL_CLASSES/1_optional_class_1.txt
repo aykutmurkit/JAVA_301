@@ -1,0 +1,98 @@
+Optional Sınıfı
+
+-   Java 8 bir değerin blunup bulunmadığnın tespit edilebilmesi gibi durumları halledebilmek için
+    Optional, OptionalDouble, OptionalInt, OptionalLong sınıflarını getirmiştir.
+
+class Optional<T>
+
+-   Bir değerin varlığı, null olup olmaması ile kontrol edilirdi.
+-   NullPointException istisnası olmaması için kullanılır
+-   Optional nesnesi bir değere sahip olmak zorunda değildir.
+-   Optional sınıfının yapıcısı yoktur. Optional metotları vardır.
+    örn: isPresent() metodu
+
+-   OptionalDouble, OptionalInt, OptionalLong sınıfları da Optional sınıfı ile aynı şekilde çalışır.
+-   Optional'dan farklı olarak double,int ve long tipleri ile çalışmak için tasarlanmıştır.
+-   Optional'da kullanılan get metodu yerine getAsInt,getAsDouble, getAsLong metotları kullanılır.
+-   filter(), ofNullable(), map() ve flatMap() metotlarını desteklemezler
+
+*
+*
+*
+
+Optional<String> bosNesne = Optional.empty();
+System.out.println(bosNesne.isPresent()); // false
+
+String deger = "Merhana";
+Optional<String> optional = Optional.of(deger);
+System.out.println(optional.isPresent()); // true döner
+
+String s = null;
+Optional<String> optional2 = Optional.of(s); 
+// hata alırsın çünkü optional'a null olan bir değer veremezsin.Bunun için farklı metot kullanman lazım
+
+
+String s = null;
+Optional<String> optional2 = Optional.ofNullable(s),
+System.out.println(optional3.isPresent()); // false
+
+
+// eski tip null çekirde
+String s2 = null;
+if(s2 != null){
+    System.out.prinln(s2.lenght());
+}
+
+// yeni tip null çek
+
+Optional<String> optinal3 = Optional.ofNullable(s2);
+optional3.ifPresent((x)->System.out.println(x.lenght()));
+
+// OR ELSE kullanımı
+
+
+String bosIsım = null;
+String isim = Optional.ofNullable(bosIsım).orElse("Aykut");
+System.out.println(isim);
+
+// OR ELSE get
+
+or else ten farkı ofNullable null değilse bu bloğa girme orElse her türlü ikiside çalışır ama sadece ilki işleme sokulur
+yani performans farkı var var or else get daha hızlı
+
+String sehir = null;
+String sehir2 = Optional.ofNullable(sehir).orElseGet(()->"İstanbul");
+System.out.println(sehir2);
+
+--------------------------------------------------------------------------
+
+public static String test(){
+    System.out.println("Test Çalıştı");
+    return "test";
+}
+
+String bos = null;
+String string = Optional.ofNullable(bos).orElse(test());
+String string = Optional.ofNullable(bos).orElseGet(()->test()); // supplier istiyor
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
