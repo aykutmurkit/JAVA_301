@@ -1,0 +1,16 @@
+STREAM LERİN ÇALIŞMA SIRASININ ÖNEMİ
+
+
+streamlerde filter gibi streamler dikey çalışır 
+yani
+
+filter.antMatch şeklinde yaparsan
+
+bir filter bir anyMatch bir filter bir anymatch çalışır
+
+ama sorted yataş çalışır. loop gibi düşün
+
+o yüzden ilk olarak filtrele sonra map işlemlerini falan yap.
+
+daha hızlı çalıştırmak için 
+
