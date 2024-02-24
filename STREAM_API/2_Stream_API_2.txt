@@ -1,0 +1,124 @@
+public class Driver {
+    public static void main(String[] args) {
+
+
+    ArrayList<String> arrayList = new ArrayList<>();
+
+    arrayList.add("ankara");
+    arrayList.add("istanbul");
+    arrayList.add("adana");
+    arrayList.add("izmir");
+
+
+    Stream<String> stream = arraylist.stream();
+
+
+    // filter bir intermetiate methodtur ve geriye bir stream döndürür.
+    Stream<String> stream2 = stream.filter(new Predicate<String>(){
+
+        @Override
+        public boolean test(String t){
+            return t.startsWith("A");
+        }
+    });
+
+    Stream<String> stream3 = stream2.map(new Function<String,String>(){
+
+        @Override
+        public String apply(String t){
+            return t.toUpperCase();
+        }
+    });
+
+    Stream<String> stream4 = stream3.sorted(new Comparator<String>(){
+
+        @Override
+        public int compare(String o1,String o2){
+            return o1.compareTo(o2);
+        }
+    });
+
+    // değer dönmüyor yani forEach methodu terminate methodtur.
+    stream4.forEach(new Consumer<String>(){
+        @Override
+        public void accept(String t){
+            System.out.println(t);
+        }
+    });
+
+    // intermediate methodları peşi sıra çağırabilirsin...
+
+    ############################################################################################################
+    ## DAHA KISA HALİ ##########################################################################################
+    ############################################################################################################
+
+    arrayList.stream()
+    .filter((s) -> s.startsWith("İ"))
+    .map((s) -> s.toUpperCase())
+    .sorted((s1,s2) -> s1.compareTo(s2))
+    .forEach(System.out::println);
+
+
+    ############################################################################################################
+    ## DAHA DA KISA HALİ #######################################################################################
+    ############################################################################################################
+
+    arrayList.stream()
+    .filter((s) -> s.startsWith("İ"))
+    .map(String::toUpperCase)
+    .sorted()
+    .forEach(System.out::println);
+
+    ############################################################################################################
+    ## COLLECTIONLAR DIŞINDA ARRAYLER İÇİNDE KULLANILABİLİR ####################################################
+    ############################################################################################################
+
+    int [] numaralar = {2,1,4,5,6,9};
+    Arrays.stream(numaralar)
+    .filter((i) -> i>3)
+    .map((x) -> x*2)
+    .sorted()
+    .forEach(System.out::println);
+
+    ############################################################################################################
+    ## DİZİLERLE STREAM KULLANMANIN İKİNCİ YOLU ################################################################
+    ############################################################################################################
+
+    of methodu bizden bir dizi alır.
+
+    Steram.of("a","c","e","g")
+    .findFirst()
+    .ifPresent(System.out::println);
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+}
