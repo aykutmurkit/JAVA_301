@@ -1,0 +1,20 @@
+Statik metoda referans
+
+*
+*
+*
+
+ArrayList<Integer> integers = new ArrayList<Integer>();
+integers.add(1);
+integers.add(3);
+integers.add(6);
+integers.add(4);
+integers.add(9);
+integers.add(5);
+
+integers.forEach((i) -> System.out.println(i));
+
+// yada
+
+integers.forEach(System.out::println);
+
