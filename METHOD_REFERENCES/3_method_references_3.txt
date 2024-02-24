@@ -1,0 +1,65 @@
+Instance metoda referans
+
+Belirli bir nesne üzerindeki instance metoda nesne referansının geçirilmesi sağlanabilir.
+
+nesneReferansı :: metotismi
+
+*
+*
+*
+
+public class Bisiklet implements Serializable {
+    private String marka;
+    private int vitesSayisi;
+
+    // parametreli ve parametresiz constructors
+    // getters and setters
+    // override hashCode,toString,equals
+
+
+}
+
+public class BisikletKarsilastirici implements Comparator<Bisiklet> {
+    @Override
+    public int compare(Bisiklet o1,Bisiklet o2) {
+        return o1.getVitesSayisi() - o2.getVitesSayisi();
+    }
+}
+
+
+
+
+
+
+public static void void(String [] args ){
+
+    ArrayList<Bisiklet> bisikletler = new ArrayList<>();
+
+    bisikletler.add(new Bisiklet("X",21));
+    bisikletler.add(new Bisiklet("Y",3));
+    bisikletler.add(new Bisiklet("Z",18));
+    bisikletler.add(new Bisiklet("Q",18));
+    bisikletler.add(new Bisiklet("M",24));
+
+    // aşağıdaki anonim class yöntemi...
+    Collections.sort(bisiklerler, new Comparator<Bisiklet>(){
+
+        @Override 
+        public int compare(Bisiklet o1,Bisiklet o2){
+            return 0; // burası dolu değil 
+        }
+    })
+
+    
+
+    BisikletKarsilastirici bisikletKarsilastirici = new BisikletKarsilastirici();
+
+
+    Collections.sort(bisikletler, bisikletKarsilastirici::compare);
+
+    //method referansı ile 
+    bisikletler.forEach(System.out::println);
+
+
+
+}
