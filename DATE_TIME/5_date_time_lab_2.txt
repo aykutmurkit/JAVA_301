@@ -1,0 +1,31 @@
+
+LocalDate tarih = LocalDate.now();
+String kisa = DateTimeFormatter.ofLocalizedDate(FormatStyle.SHORT).format(tarih);
+String orta = DateTimeFormatter.ofLocalizedDate(FormatStyle.MEDIUM).format(tarih);
+String uzun = DateTimeFormatter.ofLocalizedDate(FormatStyle.LONG).format(tarih);
+String full = DateTimeFormatter.ofLocalizedDate(FormatStyle.FULL).format(tarih);
+
+
+System.out.println();
+System.out.println(kisa); // 02/24/24
+System.out.println(orta); // Fab 24, 2024
+System.out.println(uzun); // Fabrauray 24, 2024
+System.out.println(full); // Saturday, Fabrauray 24, 2024
+
+
+// kendimize özel
+
+String ozel = DateTimeFormatter.ofPattern("dd.MM.yyyy").format(tarih);
+System.out.println(ozel);
+
+LocalTime saat = LocalTime.now();
+String kisa = DateTimeFormatter.ofLocalizedDate(FormatStyle.SHORT).format(saat);
+String orta = DateTimeFormatter.ofLocalizedDate(FormatStyle.MEDIUM).format(saat);
+
+
+System.out.println(kisa); // 11:01 PM
+System.out.println(orta); // 11:01:26 PM
+
+DateTimeFormatter ofPattern = DateTimeFormatter.ofPattern("HH:mm:ss"); // istersen : yerine - de koyabilirsin.
+System.out.println(ofPattern.format(localTime));
+
