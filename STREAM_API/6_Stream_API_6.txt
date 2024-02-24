@@ -1,0 +1,71 @@
+Parelel Stream API
+
+-   Kodun çok çekirdekli işlemcilerde paralel olarak çalıştırılması performnası önemli ölçüde artırmaktadır.
+-   Paralel programlama modern programcıların işlerinde önemli bir yer oluşturmaktadır.
+-   PAralel programlama aynı zamanda karmaşık ve hataya eğilimlidir.
+-   Java 8'in akış kütüphanesi, paralel programlama işlemlerini güvenilir ve kolay yapmaya olanak sağlamaktadır.
+
+-    mesela filter işlemi öncesinde parallel() yazarsan aynı işi iki çekirde üzerinde yapabilirsin.
+
+-   Paralel akışlar, koleksiyon tarafından tanımlamış paralelStream() metodu kullanılarak oluşturulabilir.
+-   Diğer bir yönetim ise normal bir akış içersinde parallel() metodunu kullanmaktır.
+
+-   Paralel akışlar, sequential() metodu kullanılarak normal akışlara çevrilebilir.
+-   Paralel akışları kullanırken akılda bulunması gerekn diğer bir durum ise, akıştaki elementlerin sıralanışırdır.
+-   Akış, sıralı veya karışık olablir.
+-   Performansın ön plana çıkarılması gereken durumlarda unordered() metodu kullanılarak, akışın karmaşık bir şekilde
+    işleme alınması sağlanabilir.
+
+-   Paralel akışta kullanılan forEach() metodu sıralamayı koruyamayabilir. Bu sebeple akış işlemi yapılırken, elementlerin
+    sırasının korunması için forEachOrdered() metodu kullanılabilr.
+
+*
+*
+*
+
+public class Driver{
+    public static void main(String[] args){
+
+
+        Arrays.asList("İstanbul","Ankara","Bursa","İzmir")
+        .parallelStream()
+        .filter(new Predicate<String>(){
+            @Override
+            public boolean test(String t){
+                System.out.println("Test: "+ Thread.currentTread().getName());
+                return true;
+            }
+        })
+        .map(new Function<String,String>(){
+            @Override
+            Public String apply(String t){
+                System.out.prinlnt("Apply: "+ Thread.currentTread().getName());
+                return t.toUpperCase();
+            }
+        })
+        .forEach(new Consumer<String>(){
+            @Override
+            public void accept(String t){
+                System.out.println("Accept:"+Thread.currentTread().getName());
+            }
+        });
+
+        output: 
+
+        Test:main
+        Apply:main
+        Accept:main
+        Apply:main
+        Test:ForJoinPool.commonPool-worker-1
+        Apply:ForJoinPool.commonPool-worker-1
+        Accept:ForJoinPool.commonPool-worker-1
+        ...
+
+        bu şekilde gider main thread ana thread diğeri sonradan açılmış tread. Bu şekilde büyük veri kümelerinde performasn alırsın.
+
+        
+
+
+
+    }
+}
