@@ -1,0 +1,20 @@
+Metot Referansları:
+
+-   Lambda ifadeleri ile ilişkili önemli bir özelliktir.
+-   Bir metodun çalıştırılmadan bakılması için yeni bir yol sağlar
+-   metot referansı işleme sokulduğunda fonksiyonel arayüzünün bir intance'ı yaratılır.
+    Böylece bu durum kod içerisinde kullanılabilir.
+-   Farklı tipte metot referansları bulunmaktadır.
+    
+    1. Statik Metoda Referans
+    2. Instance Metoda Referans 
+    3. Yapıcıya Referans 
+
+-   Sınıfİsmi :: metotİsmi şeklindedir
+
+-   :: işareti Java 8 ile gelen yeni bir ayıraçtır.
+-   Hedef tipinin uyumlu olduğu her yerde kullanılabilir.
+
+
+
+
