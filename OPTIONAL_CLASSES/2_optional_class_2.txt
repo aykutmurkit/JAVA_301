@@ -1,0 +1,25 @@
+public class Motor implements Serializable {
+
+    private int hacim;
+
+    // constructors
+    // getter and setter
+    // override 3 tane method
+
+}
+
+public class Araba implements Serializable {
+    private String marka;
+    private String model;
+    private Motor motor;
+
+    //constructors
+    //getters and setters
+    //override 3 tane method
+}
+
+
+*
+*
+**
+yazacağım bunu.
