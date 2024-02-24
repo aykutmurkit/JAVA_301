@@ -6,3 +6,29 @@ Sınıfİsmi :: new
 
 Yapıcı referansı, yapıcı ile uyumlu metot tanımlamış olan bir fonksiyonel arayüze atanabilir.
 
+bir önceki dosyada bulunan Bisiklet sınıfına sadece String marka alan bir yapıcı metot ekledik.
+
+
+List<String> markalar = new ArrayList<>();
+markalar.add("X marka");
+markalar.add("Y marka");
+markalar.add("Z marka");
+
+// her bisiklet için yeni nesne oluşturdu
+
+List<Bisiklet> bisikletler = markalar.stream().map(new Function<String,Bisiklet>(){
+
+    @Override
+    public Bisiklet apply(String t){
+        return new Bisiklet(t);
+    }
+
+}).collect(collectors.toList());
+
+
+// yapıcı method referansı ile 
+
+List<Bisiklet> bisikletler2 = markalar.stream().map(Bisiklet::new).collect(Collectors.toList());
+bisikletler.forEach(System.out::println);
+
+
