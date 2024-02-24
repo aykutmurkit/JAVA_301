@@ -1,0 +1,28 @@
+LocalDateTime
+
+LocalDateTime dateTime = LocalDateTime.now();
+System.out.println(dateTime);
+
+LocalDateTime localDateTime = LocalDateTime.of(2024,10,23,9,5); // 2024-10-23T09:05
+System.out.println(localDateTime);
+
+LocalDateTime localDateTime2 = localDateTime.plus(4,ChronoUnit.DAYS); 
+System.out.println(localDateTime2);
+
+----------------------------------------------------------------
+Özetle, of metodunu kullanarak doğrudan tarih bileşenlerini belirterek bir LocalDate oluşturabilirsiniz, 
+parse metodu ise bir tarih dizesini çözümleyerek bir LocalDate oluşturur.
+LocalDate date = LocalDate.of(2024, 2, 24);
+LocalDate date = LocalDate.parse("2024-02-24");
+----------------------------------------------------------------
+
+
+LocalDate localDate = LocalDate.parse("2024-01-12");
+LocalDateTime birinci = LocalDateTime.of(localDate, LocalTime.parse("04:12"));
+LocalDateTime ikinci = LocalDateTime.of(localDate, LocalTime.parse("09:12"));
+
+System.out.println(birinci.isAfter(ikinci));
+System.out.println(birinci.isBefore(ikinci));
+
+System.out.println(ChronoUnit.SECONDS.between(birinci,ikinci)); // birinci ile ikinci arasındaki 
+
