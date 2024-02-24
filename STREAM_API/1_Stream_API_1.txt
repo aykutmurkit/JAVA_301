@@ -1,0 +1,79 @@
+Stream API Giriş
+
+-   Java 8 ile ekelen en önemli özelliklerden birinin
+    lambda ifadeleri olduğunu söylemiştik. Bir diğeri ve
+    aynı zamanda lambda ifadelerinin gücünün gösteriminini
+    sağlayan özellik ise STREAM API'diğeri
+
+-   Lambda ifadeleri ile birlikte kullanılmak üzere tasarlanmıştır.
+
+-   Arama, Filtreleme, haritalama gibi karmaşık işlemleri kolaylıkla icra edebilme
+    yeteneğine sahiptir.
+
+-   Birden fazla işlemi sıralı olarak yapmaya olanak tanır.
+
+-   Büyük veri kümeleri ile kümeleri ile hızlı ve verimli çalışmasını sağlar
+
+-   Stream: Veri için bir kanaldır. Dolayısıyla, bir dizi nesneyi temsil etmektedir.
+
+-   Koleksiyon veya dizi gibi bir veri kaynağında işlem yapar.
+
+-   Stream veriyi depolamaz. Filtreleme, sıralama gibi işlemleri yaparak veriyi taşır.
+
+    *   Stream'in sıralanması kaynaktaki verinin sırasını değiştirmez.
+
+
+
+
+**************************
+** Stream API arayüzler **
+**************************
+
+-   java.util.stream içerisinde bulunan bir çok arayüze sahiptir.
+-   Tüm arayüzlerin temelinde BaseStream generic arayüzü vardır ve 
+    stream'ler tarafından kullanılan temel işlevleri içerir.
+
+    interface BaseStream<T,S extends BaseStream <T,S>>
+
+    T --> akışta bulucak elementlerin tipi
+    S --> BaseSreamden kalıtım alarak akışın tipini ifade etmektedir.
+
+-   BaseStream'den türetilmiş bir çok tipte akış arayüzü vardır.
+
+interface Stream<T> 
+
+-   Stream arayüzünde metotlar intermediate(aracı) ve terminal(son) olarak
+    iki farklı şekilde tnaımlanmıştır.
+
+-   Terminal işlemler akışı bitirir. 
+
+    * örneğin akıştaki bir elementin azami değerini bularak sonuç üretir.
+    * veya foreach kullanılarak bir işlem gerçekleştirir. ve akış bir daha kullanılamaz.
+
+-   intermediate işlemler ise başka bir akış üretir.
+
+    * tembel davranış içerisindedir.
+    * tembel davranış Stream API'ın verimli çalışmasını sağlar
+
+    * (Pipeline)           
+    Kaynak --> intermediate işlem --> terminal işlem
+
+    * intermediate işlemlerin bazıları stateless(durumu olmayan) bazıları ise stateful(duruma sahiptir).
+        * durumu olmayan işlemlerde her element diğer elementlerden bağımsız bir şekilde işleme sokulur.
+          örneğin filtreleme işleminde elementler bir birinden bağımsız bir şekilde filtrelenir.
+        * duruma sahip olan işlemlerde, bir elementin işleme sokuması başka bir elemente bağlı olablir.
+        * Stream nesne referansları ile çalıştığından, ilkel veri tipleri ile çalışmaz onların wrapper
+          sınıflarını kullanmak zorundasın
+
+          * DoubleStream
+          * IntStream
+          * LongStrean
+          ...
+
+
+
+
+
+          
+
+
