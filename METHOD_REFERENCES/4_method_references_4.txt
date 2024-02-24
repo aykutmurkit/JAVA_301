@@ -1,0 +1,8 @@
+Yapıcıya referans
+
+Metot referanslarında olduğu gibi yapıcıya da referan geçilebilir. 
+
+Sınıfİsmi :: new
+
+Yapıcı referansı, yapıcı ile uyumlu metot tanımlamış olan bir fonksiyonel arayüze atanabilir.
+
