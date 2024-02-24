@@ -1,0 +1,58 @@
+public class Driver {
+    public static void main(String[] args) {
+
+        IntStream.range(0,10).forEach(System.out::println); // 0 dahil 10 dahil değil. 
+
+
+        // array içinde sayılar map ile iki ile çarpar sonra ortalama alır eğer değer varsa bunu consola basar.
+        Arrays.stream(new int[] {2,4,6,8})
+            .map((x)->x*2)
+            .average()
+            .ifPresent(System.out::println);
+
+
+        //1 ile 100 sayılarının toplamı
+        int sum = IntStream.range(1,101).sum();
+        System.out.println(sum);
+
+
+        // String dizisini integer dizisi haline getirir max değeri döndürür ve consola basar.
+        Stream.of("1","2","3","4")
+            .mapToInt(Integer::parseInt)
+            .max()
+            .ifPresent(System.out::println);
+
+        
+        //1 ile 9 arasında sayıları alır onlara a ekler ve String objesi olarak ekrana basar.
+        IntStream.range(1,10)
+            .mapToObj((i)->i+"a")
+            .forEach(System.out::println);
+
+
+        // double değerleri int haline getirir ve ekrana basar.
+        Stream.of(1.1,2.2,3.3,4.4)
+            .mapToInt(Double::intValue)
+            .max()
+            .ifPresent(System.out::println);
+
+
+        // şimdi bir hata gösterelim.
+        Stream.of("Ali","Ahmet","Cem")
+            .filter(new Predicate<String>(){
+                @Override
+                public boolean test(String t){
+                    System.out.println("çalıştı");
+                    return true;
+                }
+            });
+
+        çalışmaz çünkü bu bir intermetiate methodtur stream terminate değil.
+        fakat sonuna 
+
+        .forEach(System.out::println); eklersek çalışır.
+
+
+
+
+    }
+}
