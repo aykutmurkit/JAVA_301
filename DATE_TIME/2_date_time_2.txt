@@ -1,0 +1,25 @@
+
+// LocalTime
+
+LocalTime time = LocalTime.now();
+System.out.println(time);
+
+LocalTime localTime = LocalTime.parse("21:30");
+System.out.println(localtime);
+
+LocalTime localTime2 = LocalTime.of(20,30);
+System.out.prinltln(localTime2);
+
+LocalTime localTime3 = Localtime.parse("21:30").plus(1,ChronoUnit.HOURS); 
+System.out.prinltln(localTime3);
+
+System.out.prinltln(localTime3.getHour()); // 21
+System.out.prinltln(localTime3.getMinute()); // 30
+
+LocalTime birinci = LocalTime.parse("14:00");
+LocalTime ikinci = LocalTime.parse("16:00");
+System.out.println(birinci.isAfter(ikinci)); // false
+System.out.println(birinci.isBefore(ikinci)); // true
+
+
+
