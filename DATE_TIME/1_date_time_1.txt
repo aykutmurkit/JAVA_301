@@ -19,4 +19,49 @@ diğer formatlar;
     *   Java.time.format --> Zaman ve tarih formatlama desteği sunar.
     *   Java.time.temporal --> Genişltilmiş zaman ve tarih desteği sağlar.
     *   Java.time.zone --> Zaman bölgeleri desteği sağlar.
-    
+
+*
+*
+*
+
+public class Driver {
+    public static void main(String[] args) {
+
+        LocalDate localDate = LocalDate.now();
+        System.out.println(localDate);
+
+        LocalDate of = LocalDate.of(1995,10,23),
+        System.out.println(of);
+
+
+        LocalDate localDate2 = LocalDate.parse("1995-10-23");
+        System.out.println(localDate2);
+
+        System.out.println(localDate.plus(1,ChronoUnit.DAYS)); // doğum tarihime bir gün ekleyecek
+        System.out.println(localDate.plusDays(2)); // doğum tarime iki gün ekleyecek.
+
+        System.out.prinln(localDate.minus(1,ChronoUnit.MONTHS));
+
+        LocalDate localDate3 = LocalDate.parse("2023-02-24");
+        System.out.prinln(localDate3.getDayOfWeek()); // han gün ise enum olarak döner
+
+        System.out.println(localDate3.getDayOfMonth()); // ayın hangi günü ise int olarak döner;
+
+        LocalDate birinciTarih = LocalDate.parse("2020-01-20");
+        LocalDate ikinciTarih = LocalDate.parse("2020-01-25");
+        System.out.println("birinciTarih.isAfter(ikinciTarih)");  // false
+        System.out.println("birinciTarih.isBefore(ikinciTarih)"); // true
+
+        //----------------------------------------------------------------
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Doğum tarihi: ");
+        String line = scanner.nextLine(); // 1995-10-23 olarak girmen lazım
+        LocalDate dogumtarihi = LocalDate.parse(line);
+        System.out.println("Doğum tarihiniz: "+dogumtarihi);
+        System.out.println("Yaşınız: "+ (LocalDate.now().getYear() - dogumtarihi.getYear()));
+
+
+
+    }
+}
