@@ -1,0 +1,22 @@
+-   java 8 zaman ve tarih ile ilgili işlemlerin yürütülebilmesi için farklı bir 
+    yaklaşım ortaya koymuştur.
+
+-   Bu paketler zaman ve tarih işlemleri için çok sayıda sınf, arayüz ve enumartion tanımlamaktadır.
+
+-   Java.time içerisinde zaman ve tarihe erişmemizi sağlayan bir çok sınıf olmakla birlikte, bunlardan bazıları
+
+    *   LocalDate
+    *   LocalTime
+    *   LocalDateTime
+
+-   Bu sınflar zaman, tarih ve zaman-tarih ikilisini birlikte muhafaza ederler.
+-   LocalDate ISO 8601'le belirlenen Gregorian takvimini kullanır.
+
+diğer formatlar;
+
+    *   Java.time --> Zaman ve tarih desteği sağlayan en üst sınıftır.
+    *   Java.time.chrono --> Gregorian olmayan takvimlere alternatif sağlar
+    *   Java.time.format --> Zaman ve tarih formatlama desteği sunar.
+    *   Java.time.temporal --> Genişltilmiş zaman ve tarih desteği sağlar.
+    *   Java.time.zone --> Zaman bölgeleri desteği sağlar.
+    
